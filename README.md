@@ -36,6 +36,9 @@ Vite meneruskan `/api` ke backend lokal di port 8787. Panduan API bersama tersed
 - Memulai ujian membuat percobaan yang terikat pada akun; waktu mulai dan batas waktu ditetapkan server.
 - Jawaban disimpan ke server. Kunci jawaban dan pembahasan baru dikirim setelah pengumpulan.
 - Skor dihitung oleh API dan hasilnya tersimpan di PostgreSQL.
+- Menu **Nilai saya** menampilkan riwayat, rata-rata, nilai tertinggi, serta tautan hasil dan pembahasan.
+- Ikon lonceng membuka **Aktivitas ujian** berdasarkan daftar ujian terbaru dari server, dengan aksi lanjutkan ujian dan lihat hasil. Ini bukan notifikasi push.
+- Tombol **Petunjuk** di ruang ujian membuka panduan pengerjaan. Sebelum kembali ke beranda, portal menunggu penyimpanan jawaban selesai; permintaan autosave dijalankan berurutan.
 
 ## Deployment Cloudflare Pages
 
