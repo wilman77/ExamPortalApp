@@ -1,37 +1,37 @@
 # ExamPortalApp
 
-Portal web MVP untuk siswa mengikuti ujian online dan melihat hasil latihan. Tersedia daftar ujian contoh, halaman pengerjaan pilihan ganda dengan timer, autosimpan jawaban di browser, pengumpulan jawaban, dan hasil yang dihitung secara lokal.
+Portal web untuk siswa mengikuti ujian online. Front-end dibuat dengan React 18, TypeScript, Vite, dan Lucide React. Aplikasi ini menggunakan API bersama ExamEduApp (Node.js + Express + SQLite) untuk akun, ujian, jawaban, dan hasil.
 
-## Teknologi
+## Menjalankan secara lokal
 
-- React 18, TypeScript, dan Vite
-- Lucide React untuk ikon
-- `localStorage` browser untuk menyimpan progres latihan
+Persyaratan: Node.js 20 atau lebih baru.
 
-## Menjalankan aplikasi
+1. Jalankan backend pada repositori `ExamEduApp`:
+   ```bash
+   cd /path/ke/ExamEduApp/server
+   npm install
+   cp .env.example .env
+   # Atur TEACHER_SIGNUP_CODE untuk pendaftaran guru.
+   npm run dev
+   ```
+2. Di terminal lain, dari akar repositori ini jalankan:
+   ```bash
+   npm install
+   npm run dev -- --port 5174
+   ```
+3. Buka `http://localhost:5174`. Siswa dapat mendaftar dengan email dan kata sandi; guru harus menerbitkan ujian dari ExamEduApp.
 
-Persyaratan: Node.js 18 atau lebih baru.
+Vite meneruskan `/api` ke backend lokal di port 8787. Untuk deployment, set `VITE_API_URL` dan konfigurasikan origin serta HTTPS/cookie pada backend bersama. Panduan backend ada di `ExamEduApp/server/README.md` dalam workspace yang berisi kedua repositori.
 
-```bash
-npm install
-npm run dev
-```
+## Alur siswa
 
-Buka alamat lokal yang ditampilkan Vite. Untuk membuat build produksi:
+- Siswa masuk atau mendaftar, lalu melihat ujian yang sudah diterbitkan pengajar.
+- Mulai ujian membuat percobaan yang terikat pada akun siswa; waktu mulai dan batas waktu ditetapkan server.
+- Jawaban disimpan ke server, bukan hanya ke `localStorage`. Kunci jawaban dan pembahasan baru dikirim setelah pengumpulan.
+- Skor dihitung oleh API dan hasilnya tersimpan di server.
 
-```bash
-npm run build
-npm run preview
-```
+## Batasan yang diketahui
 
-## Fitur MVP
+Backend belum di-host atau dipasang pada domain publik. Aplikasi menyediakan penyimpanan dan penilaian dasar, bukan pengawasan ujian atau sistem anti-kecurangan. Sebelum penggunaan resmi, siapkan HTTPS, backup, kebijakan retensi, dan pengujian keamanan.
 
-- Beranda siswa dengan jadwal dan status ujian
-- Alur pengerjaan kuis pilihan ganda, navigasi antarsoal, timer, dan indikator progres
-- Autosimpan progres dan jawaban di browser
-- Hasil serta pembahasan ringkas setelah pengumpulan
-- Tampilan responsif untuk desktop dan ponsel
-
-## Batasan
-
-Ini adalah prototipe front-end dengan soal dan profil contoh. Belum ada backend, akun/login, sinkronisasi antarperangkat, verifikasi identitas, pengawasan ujian, atau pengamanan jawaban. Jawaban dan skor dihitung di sisi browser, sehingga tidak cocok untuk ujian resmi sampai backend dan kontrol keamanan ditambahkan.
+> **Akses kelas:** untuk MVP ini, semua akun siswa dapat melihat semua ujian terbit. Belum ada roster atau penugasan ujian per kelas; jangan gunakan untuk materi yang harus dibatasi sebelum fitur enrollment tersedia.
