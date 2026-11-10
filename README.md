@@ -1,11 +1,37 @@
 # ExamPortalApp
 
-Aplikasi ujian online berbasis web yang ditujukan untuk digunakan di berbagai jenjang pendidikan.
+Portal web MVP untuk siswa mengikuti ujian online dan melihat hasil latihan. Tersedia daftar ujian contoh, halaman pengerjaan pilihan ganda dengan timer, autosimpan jawaban di browser, pengumpulan jawaban, dan hasil yang dihitung secara lokal.
 
-## Status proyek
+## Teknologi
 
-Repositori ini belum memuat kode sumber aplikasi. Saat ini, satu-satunya berkas proyek yang tersedia adalah `README.md`, sehingga instalasi, konfigurasi, fitur, dan cara menjalankan aplikasi belum dapat dijelaskan atau dicoba.
+- React 18, TypeScript, dan Vite
+- Lucide React untuk ikon
+- `localStorage` browser untuk menyimpan progres latihan
 
 ## Menjalankan aplikasi
 
-Belum tersedia langkah untuk menjalankan aplikasi. Petunjuk dapat ditambahkan setelah kode sumber, teknologi yang digunakan, dan konfigurasi proyek tersedia di repositori ini.
+Persyaratan: Node.js 18 atau lebih baru.
+
+```bash
+npm install
+npm run dev
+```
+
+Buka alamat lokal yang ditampilkan Vite. Untuk membuat build produksi:
+
+```bash
+npm run build
+npm run preview
+```
+
+## Fitur MVP
+
+- Beranda siswa dengan jadwal dan status ujian
+- Alur pengerjaan kuis pilihan ganda, navigasi antarsoal, timer, dan indikator progres
+- Autosimpan progres dan jawaban di browser
+- Hasil serta pembahasan ringkas setelah pengumpulan
+- Tampilan responsif untuk desktop dan ponsel
+
+## Batasan
+
+Ini adalah prototipe front-end dengan soal dan profil contoh. Belum ada backend, akun/login, sinkronisasi antarperangkat, verifikasi identitas, pengawasan ujian, atau pengamanan jawaban. Jawaban dan skor dihitung di sisi browser, sehingga tidak cocok untuk ujian resmi sampai backend dan kontrol keamanan ditambahkan.
