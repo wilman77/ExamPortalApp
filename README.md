@@ -1,6 +1,6 @@
 # ExamPortalApp
 
-Portal web untuk siswa mengikuti ujian online. Front-end dibuat dengan React 18, TypeScript, Vite, dan Lucide React. Aplikasi ini menggunakan API bersama ExamEduApp (Node.js + Express + SQLite) untuk akun, ujian, jawaban, dan hasil.
+Portal web untuk siswa mengikuti ujian online. Front-end dibuat dengan React 18, TypeScript, Vite, dan Lucide React. Aplikasi ini menggunakan API bersama ExamEduApp (Node.js + Express + PostgreSQL) untuk akun, ujian, jawaban, dan hasil.
 
 ## Menjalankan secara lokal
 
@@ -11,7 +11,7 @@ Persyaratan: Node.js 20 atau lebih baru.
    cd /path/ke/ExamEduApp/server
    npm install
    cp .env.example .env
-   # Atur TEACHER_SIGNUP_CODE untuk pendaftaran guru.
+   # Isi DATABASE_URL PostgreSQL/Supabase dan TEACHER_SIGNUP_CODE.
    npm run dev
    ```
 2. Di terminal lain, dari akar repositori ini jalankan:
@@ -32,6 +32,6 @@ Vite meneruskan `/api` ke backend lokal di port 8787. Untuk deployment, set `VIT
 
 ## Batasan yang diketahui
 
-Backend belum di-host atau dipasang pada domain publik. Aplikasi menyediakan penyimpanan dan penilaian dasar, bukan pengawasan ujian atau sistem anti-kecurangan. Sebelum penggunaan resmi, siapkan HTTPS, backup, kebijakan retensi, dan pengujian keamanan.
+Backend disiapkan untuk Render Free dan Supabase PostgreSQL; URL aktif dan environment harus dikonfigurasi pada hosting. Paket gratis dapat tidur/dijeda dan bukan untuk ujian produksi yang kritis. Aplikasi menyediakan penyimpanan dan penilaian dasar, bukan pengawasan ujian atau sistem anti-kecurangan. Sebelum penggunaan resmi, siapkan HTTPS, backup, kebijakan retensi, dan pengujian keamanan.
 
 > **Akses kelas:** untuk MVP ini, semua akun siswa dapat melihat semua ujian terbit. Belum ada roster atau penugasan ujian per kelas; jangan gunakan untuk materi yang harus dibatasi sebelum fitur enrollment tersedia.
