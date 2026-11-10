@@ -10,7 +10,7 @@ export type ExamSummary = {
   questionCount: number;
   attempt: { id: string; status: 'in_progress' | 'submitted' | 'expired'; score: number | null } | null;
 };
-export type AttemptQuestion = { id: number; prompt: string; options: string[] };
+export type AttemptQuestion = { id: number; prompt: string; options: string[]; imageData?: string | null };
 export type ReviewQuestion = AttemptQuestion & { answer: number; explanation: string; selectedAnswer: number | null; correct: boolean };
 export type ExamInfo = Pick<ExamSummary, 'id' | 'title' | 'subject' | 'grade' | 'date' | 'duration'>;
 export type Attempt = {

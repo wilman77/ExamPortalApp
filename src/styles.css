@@ -12,3 +12,20 @@
 @media(max-width:700px){.activity-popover{right:-44px;top:calc(100% + 15px)}.grades-main{padding-top:25px}.grades-heading{align-items:flex-start}.grades-heading .secondary-button{height:31px;padding:0 8px;font-size:8px}}
 @media(max-width:520px){.activity-popover{right:-77px;width:min(340px,calc(100vw - 22px))}.grades-heading{flex-direction:column}.grades-heading .secondary-button{align-self:flex-start}.grade-card{align-items:flex-start;gap:11px;padding:12px}.grade-card-result{gap:7px}.grade-card-result>b{font-size:19px}.grade-card-result .student-quiet-button{height:29px;padding:0 8px;font-size:8px}.grade-card-copy h3{font-size:11px}.grade-card-copy>p{line-height:1.5}}
 .answer-option:disabled,.question-number-button:disabled,.back-home:disabled{cursor:wait;opacity:.7}.question-navigation .student-primary:disabled{cursor:wait;opacity:.7}
+
+
+.question-image {
+  display: block;
+  width: 100%;
+  max-width: 100%;
+  max-height: 420px;
+  height: auto;
+  object-fit: contain;
+  margin: 1rem 0 1.25rem;
+}
+
+.review-question-image {
+  width: 100%;
+  max-width: 100%;
+  margin: 0.75rem 0;
+}
